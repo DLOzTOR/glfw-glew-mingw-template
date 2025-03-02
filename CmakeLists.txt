@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.20)
+project(OpenGL-template)
+
+add_executable(program src/main.cpp)
+target_link_libraries(program PRIVATE
+    ${CMAKE_SOURCE_DIR}/lib/glew/x64/libglew32s.a
+    opengl32
+    ${CMAKE_SOURCE_DIR}/lib/glfw/libglfw3.a
+)
+target_include_directories(program PRIVATE
+    ${CMAKE_SOURCE_DIR}/lib/glfw/include
+    ${CMAKE_SOURCE_DIR}/lib/glew/include
+    ${CMAKE_SOURCE_DIR}/lib/glm
+)
+
+set(CMAKE_EXE_LINKER_FLAGS "-mwindows")
+
+target_compile_definitions(program PRIVATE GLEW_STATIC)
