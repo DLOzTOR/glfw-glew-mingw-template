@@ -1,8 +1,8 @@
 @echo off
 echo Launching program...
 
-if exist out\program.exe (
-    cd out
+if exist out\build\program.exe (
+    cd out\build
     program.exe
     cd ..
 ) else (
